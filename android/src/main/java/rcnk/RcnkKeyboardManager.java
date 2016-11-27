@@ -12,7 +12,7 @@ public class RcnkKeyboardManager extends SimpleViewManager<RcnkKeyboardView> {
 
     @Override
     public String getName() {
-        return null;
+        return "RnckKeyboard";
     }
 
     @Override
