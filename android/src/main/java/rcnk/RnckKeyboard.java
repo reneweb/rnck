@@ -2,6 +2,7 @@ package rcnk;
 
 import android.content.Context;
 import android.inputmethodservice.Keyboard;
+import com.facebook.react.bridge.ReadableArray;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -10,11 +11,11 @@ import java.util.List;
 /**
  * Created by reweber on 27/11/2016
  */
-public class RcnkKeyboard extends Keyboard {
+public class RnckKeyboard extends Keyboard {
     private final Context context;
-    private final String[][] keys;
+    private final ReadableArray keys;
 
-    public RcnkKeyboard(Context context, String[][] keys) {
+    public RnckKeyboard(Context context, ReadableArray keys) {
         super(context, R.xml.keyboard_base);
         this.context = context;
         this.keys = keys;
@@ -25,11 +26,12 @@ public class RcnkKeyboard extends Keyboard {
         List<Row> rowsList = new ArrayList<>();
         List<Key> keysList = new ArrayList<>();
         List<Key> modifierKeysLst = new ArrayList<>();
-        for (String[] row : keys) {
+        for(int i = 0; i < keys.size(); i++) {
+            ReadableArray row = keys.getArray(i);
             Row r = new Row(this);
-            for (String key : row) {
+            for(int j = 0; j < row.size(); j++) {
                 Key k = new Key(r);
-                k.label = key;
+                k.label = row.getString(j);
                 keysList.add(k);
             }
             rowsList.add(r);

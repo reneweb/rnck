@@ -7,8 +7,8 @@ import android.util.AttributeSet;
 /**
  * Created by reweber on 27/11/2016
  */
-public class RcnkKeyboardView extends KeyboardView {
-    public RcnkKeyboardView(Context context, AttributeSet attrs) {
+public class RnckKeyboardView extends KeyboardView {
+    public RnckKeyboardView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 }
