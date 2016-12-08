@@ -1,19 +1,26 @@
-import { NativeModules, requireNativeComponent, View } from 'react-native';
+import { NativeModules, requireNativeComponent, View, DeviceEventEmitter } from 'react-native';
 import React, { Component, PropTypes } from 'react';
 
 const { Rnck } = NativeModules;
-const KEYBOARD_REF = 'keyboard';
 
 export default class Keyboard extends Component {
 
   static propTypes = {
     ...View.propTypes,
-    keys: PropTypes.array
+    keys: PropTypes.array,
+    show: PropTypes.bool,
+    onKeyPress: PropTypes.func
   }
 
   constructor() {
     super();
     this.state = {}
+  }
+
+  componentWillMount() {
+    DeviceEventEmitter.addListener('onKeyPress', (e: Event) => {
+      this.props.onKeyPress(e)
+    });
   }
 
   render() {

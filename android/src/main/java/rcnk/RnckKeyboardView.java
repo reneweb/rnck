@@ -10,5 +10,6 @@ import android.util.AttributeSet;
 public class RnckKeyboardView extends KeyboardView {
     public RnckKeyboardView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        this.setPreviewEnabled(false);
     }
 }
