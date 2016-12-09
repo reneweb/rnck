@@ -7,6 +7,7 @@ _Note: this is still very much under development and currently works only on And
 ## Getting started
 
 `$ npm install rnck --save`
+
 `$ react-native link rnck`
 
 ## Usage
@@ -15,7 +16,7 @@ import React, { Component } from 'react';
 import {TextInput} from 'react-native';
 import Keyboard from 'rnck';
 
-export default class ReactTest2 extends Component {
+export default class RnckExample extends Component {
 
   constructor(props) {
     super(props);
