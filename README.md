@@ -31,7 +31,7 @@ export default class RnckExample extends Component {
           onEndEditing={() => this.setState({showKeyboard: false})}
           value={this.state.text}></TextInput>
         <Keyboard
-          keys={[['1','2', '3'], ['4', '5', '6'], ['7', '8', '9']}
+          keys={[['1','2', '3'], ['4', '5', '6'], ['7', '8', '9']]}
           show={this.state.showKeyboard}
           onKeyPress={(event) => this.setState({text: this.state.text + event.key})}/>
       </View>
