@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B3E7B58A1CC2AC0600A0062D /* Rnck.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* Rnck.m */; };
+		977800791E112EF30088B4C5 /* RnckKeyboardShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 977800761E112EF30088B4C5 /* RnckKeyboardShadow.m */; };
+		9778007E1E112F360088B4C5 /* RnckKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 9778007B1E112F360088B4C5 /* RnckKeyboard.m */; };
+		9778007F1E112F360088B4C5 /* RnckKeyboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9778007D1E112F360088B4C5 /* RnckKeyboardManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,8 +26,13 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRnck.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRnck.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3E7B5881CC2AC0600A0062D /* Rnck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rnck.h; sourceTree = "<group>"; };
-		B3E7B5891CC2AC0600A0062D /* Rnck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rnck.m; sourceTree = "<group>"; };
+		977800701E112EF30088B4C5 /* RnckConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RnckConstants.h; sourceTree = "<group>"; };
+		977800751E112EF30088B4C5 /* RnckKeyboardShadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RnckKeyboardShadow.h; sourceTree = "<group>"; };
+		977800761E112EF30088B4C5 /* RnckKeyboardShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnckKeyboardShadow.m; sourceTree = "<group>"; };
+		9778007A1E112F360088B4C5 /* RnckKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RnckKeyboard.h; sourceTree = "<group>"; };
+		9778007B1E112F360088B4C5 /* RnckKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnckKeyboard.m; sourceTree = "<group>"; };
+		9778007C1E112F360088B4C5 /* RnckKeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RnckKeyboardManager.h; sourceTree = "<group>"; };
+		9778007D1E112F360088B4C5 /* RnckKeyboardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnckKeyboardManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,8 +57,13 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				B3E7B5881CC2AC0600A0062D /* Rnck.h */,
-				B3E7B5891CC2AC0600A0062D /* Rnck.m */,
+				9778007A1E112F360088B4C5 /* RnckKeyboard.h */,
+				9778007B1E112F360088B4C5 /* RnckKeyboard.m */,
+				9778007C1E112F360088B4C5 /* RnckKeyboardManager.h */,
+				9778007D1E112F360088B4C5 /* RnckKeyboardManager.m */,
+				977800701E112EF30088B4C5 /* RnckConstants.h */,
+				977800751E112EF30088B4C5 /* RnckKeyboardShadow.h */,
+				977800761E112EF30088B4C5 /* RnckKeyboardShadow.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,7 +124,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3E7B58A1CC2AC0600A0062D /* Rnck.m in Sources */,
+				9778007E1E112F360088B4C5 /* RnckKeyboard.m in Sources */,
+				977800791E112EF30088B4C5 /* RnckKeyboardShadow.m in Sources */,
+				9778007F1E112F360088B4C5 /* RnckKeyboardManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,10 +211,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
-				"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
+					"$(SRCROOT)/../../react-native/Libraries/**",
+					"$(SRCROOT)/../../React",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
@@ -213,10 +227,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
+					"$(SRCROOT)/../../react-native/Libraries/**",
+					"$(SRCROOT)/../../React",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";

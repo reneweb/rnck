@@ -1,4 +1,4 @@
-import { NativeModules, requireNativeComponent, View, DeviceEventEmitter } from 'react-native';
+import { NativeModules, requireNativeComponent, View, DeviceEventEmitter, Platform } from 'react-native';
 import React, { Component, PropTypes } from 'react';
 
 const { Rnck } = NativeModules;
@@ -24,7 +24,17 @@ export default class Keyboard extends Component {
   }
 
   render() {
-    return <RnckKeyboard {...this.props} />;
+    const {onKeyPress, ...props} = this.props;
+
+    props.onKeyPress = onKeyPress && ((event: Event) => {
+          if (Platform.OS === 'ios') {
+            onKeyPress && onKeyPress(event.nativeEvent);
+          } else {
+            onKeyPress && onKeyPress(event);
+          }
+        });
+
+    return <RnckKeyboard {...props} />;
   }
 };
 
